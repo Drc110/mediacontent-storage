@@ -5,11 +5,7 @@ function Header() {
   return (
     <header>
       <div className={styles.textRight}>
-        <Link to={"/"}>Home page</Link>
-      </div>
-
-      <div className={styles.signIn}>
-        <Link to={"/admin"}>Admin Page</Link>
+        <Link to={"/"}>Новостной портал</Link>
       </div>
     </header>
   )

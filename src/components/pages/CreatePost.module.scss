@@ -1,0 +1,118 @@
+.wrapper {
+    margin: 50px 200px;
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        margin: 0 auto;
+        font-family: 'Inter';
+    }
+
+    p {
+        font-size: 20px;
+        margin-left: 25%;
+        font-family: 'Inter';
+    }
+
+    input {
+        margin: 0 0 30px 25%;
+        width: 50%;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    textarea {
+        margin: 0 0 10px 25%;
+        width: 50%;
+        width: 50%;
+    }
+
+    button {
+        margin: 0 0 30px 30%;
+        width: 40%;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .tagsArea {
+        display: flex;
+        margin: 0 0 30px 25%;
+        width: 50%;
+        min-height: fit-content;
+        justify-content: space-between;
+
+        input {
+            margin: 0;
+            max-width: 50%;
+            height: 36px;
+        }
+
+        button {
+            margin: 0;
+            height: 40px;
+            max-width: 30%;
+            cursor: pointer;
+        }
+    }
+
+    .tagsDisplay {
+        margin: 0 0 30px 25%;
+        width: 50%;
+        min-height: 100px;
+        background-color: #dfdcdc;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+
+        .tag {
+            display: flex;
+            justify-items: flex-start;
+            max-height: 30px;
+
+            h3 {
+                font-size: 24px;
+                margin: 0;
+                font-family: 'Inter';
+                font-weight: 500;
+            }
+
+            img {
+                margin: auto 5px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .backBtn {
+        position: absolute;
+        top: 194px;
+        right: 30px;
+        display: flex;
+        justify-content: center;
+        background: #dbdbdb;
+        width: 250px;
+        height: 50px;
+        border-radius: 10px;
+        padding: 10px;
+
+        &:hover {
+            background-color: darken(rgba(160, 233, 255, 1), 10%);
+        }
+
+        transition: background-color 0.4s;
+
+        img {
+            margin: auto 0;
+        }
+
+        h2 {
+            width: auto;
+            font-weight: 500;
+            font-size: 25px;
+            margin: auto 0;
+            font-family: 'inter';
+        }
+    }
+}

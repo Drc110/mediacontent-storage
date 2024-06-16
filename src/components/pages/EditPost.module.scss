@@ -1,0 +1,46 @@
+.wrapper {
+    margin: 10px 50px;
+
+    .grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-size: 30px;
+            margin: 0 auto;
+            font-family: 'Inter';
+        }
+
+        h3 {
+            font-size: 25px;
+            font-family: 'Inter';
+        }
+    }
+
+    p {
+        font-size: 20px;
+        margin-left: 25%;
+        font-family: 'Inter';
+    }
+
+    input {
+        margin: 0 0 30px 25%;
+        width: 50%;
+        height: 30px;
+        font-size: 18px
+    }
+
+    textarea {
+        margin: 0 0 10px 25%;
+        width: 50%;
+        width: 50%;
+    }
+
+    button {
+        margin: 0 0 30px 30%;
+        width: 40%;
+        height: 50px;
+        font-size: 20px
+    }
+}

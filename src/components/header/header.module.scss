@@ -8,28 +8,14 @@ header{
 
     .textRight{
         height: 10vh;
-        width: 15%;
-        background-color: rgba(117, 197, 238, 1);
+        width: 25%;
+        background-color: rgba(160, 233, 255, 1);
         align-items: center;
         justify-content: center;
         display: flex;
         &>*{
-            font-family: 'Oswald';
-            font-weight: 400;
-            font-size: 30px;
-        }
-    }
-
-    .signIn{
-        height: 10vh;
-        width: 15%;
-        background-color: rgba(117, 197, 238, 1);
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        &>*{
-            font-family: 'Oswald';
-            font-weight: 400;
+            font-family: 'Inter';
+            font-weight: 500;
             font-size: 30px;
         }
     }

@@ -3,133 +3,57 @@ a:visited { text-decoration: none; color: black;}
 a:hover { text-decoration: none; color: black;}
 a:active { text-decoration: none; color: black;}
 
-.date{
-    margin: 5px 0;
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: 20px;
-}
 .wrapper{
-    margin: 10px;
-    //word-wrap: break-word;
-    .border{
-        border-top: 2px solid #000;
-        display: flex;
-        flex-wrap: wrap;
-        padding-top: 10px;
-        
-        .card{
-            background-color: rgba(205, 201, 195, 1);
-            width: 360px;
-            height: 250px;
-            padding: 10px;
-            margin: 10px 20px 0px 0px;
-            /* //height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; */
-            &:last-of-type{
-                margin-right: 0px;
-            }
-            .title{
-                font-family: 'Inter';
-                font-weight: 700;
-                margin: 5px 0 0 0;
-                font-size: 20px;
-                height: 20%;
-                overflow: hidden;
-
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-            }
-            .content{
-                height: 55%;
-                font-family: 'Inter';
-                font-weight: 400;
-                margin: 15px 0 0 0;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                font-size: 16px;
-                line-height: 19px; //aboba
-
-                //word-break: break-all;
-            }
-            .tagsWrap {
-                height: 20%;
-                display: flex;
-                flex-wrap: wrap;
-                .tag{
-                    height: 30px;
-                    width: 100px;
-                    margin: 10px 5px 0 0;
-                    background-color: white;
-                    border-radius: 5px;
-                    text-align: center;
-                }
-            }
+    width: 600px;
+    height: fit-content;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin-bottom: 50px;
+    .cardText{
+        max-height: 400px;
+        margin-bottom: 15px;
+        .title {
+            font-family: 'Inter';
+            font-weight: 700;
+            margin: 5px 0;
+            font-size: 30px;
+            overflow: hidden;
+            word-wrap: break-word
         }
+        .content{
+            font-family: 'Inter';
+            font-weight: 400;
+            margin: 0 5px 0 0;
+            font-size: 20px;
+            line-height: 20px;
 
-        .videoCard{
-            background-color: rgba(205, 201, 195, 1);
-            width: 440px;
-            height: 250px;
-            padding: 10px;
-            margin: 10px 20px 0px 0px;
-            
-            &:last-of-type{
-                margin-right: 0px;
-            }
-            .title {
-                font-family: 'Inter';
-                font-weight: 700;
-                margin: 5px 0 0 0;
-                font-size: 20px;
-                height: 50px;
-                overflow: hidden;
-
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-            }
-            .contentWrap {
-                margin-top: 10px;
-                height: 145px;
-                display: flex;
-                flex-direction: row;
-                .content{
-                    font-family: 'Inter';
-                    font-weight: 400;
-                    margin: 0 5px 0 0;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    font-size: 16px;
-                    line-height: 18px;
-                }
-                .imgWrap{
-                    height: 100%;
-                    align-self: center;
-                    aspect-ratio: 16/9;
-                    background-color: #000;
-                    &>*{
-                        width: 100%;
-                        height: 100%;
-                        object-fit: scale-down;
-                    }
-                }
-            }
-            .tagsWrap {
-                display: flex;
-                flex-wrap: wrap;
-                .tag{
-                    height: 30px;
-                    width: 100px;
-                    margin: 10px 5px 0 0;
-                    background-color: white;
-                    border-radius: 5px;
-                    text-align: center;
-                }
-            }
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            overflow: hidden;
         }
     }
+    .media{
+        width: calc(100% - 20px);
+        padding: 10px;
+        aspect-ratio: 16/9;
+        background-color: #000;
+        border-radius: 10px;
+    }
+    p {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 16px;
+    }
+    .tags{
+        display: flex;
+        margin: 0;
+        .tag {
+          margin: 0 10px 5px 0;
+          font-size: 19px;
+          font-weight: 500;
+          font-family: 'Inter';
+        }
+    } 
 }

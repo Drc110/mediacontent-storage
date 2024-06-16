@@ -1,44 +1,49 @@
 import styles from './cardItem.module.scss'
+import { useState, useEffect } from 'react'
 import { Route, Routes, Link } from 'react-router-dom'
+import Plyr from "plyr"
+import Hls from "hls.js"
 
-function CardItem({date, value}) {
+function CardItem({value}) {
+  const [tags, setTags] = useState([])
+  useEffect(() => {
+    const temp = value.hashTags.map(el => (Object.values(el)[0]));
+    setTags(temp);
 
+    const loadVideo = async (path) => {
+      const video = document.getElementById("player" + value.id);
+      if(Hls.isSupported()){
+        let hls = new Hls();
+        hls.loadSource(path);
+
+        hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+          new Plyr(video, {hideControls: false, captions: {active: true}}).toggleControls(false)
+        });
+        hls.attachMedia(video);
+        window.hls = hls;
+      }
+    };
+    loadVideo(value.mediaFilePath)
+  }, [])
+  
   return (
     <div className={styles.wrapper}>
-        <p className={styles.date}>{date}</p>
-        <div className={styles.border}>
-
-            {value.map(el => el.mediaFilePath ? (
-                <div className={styles.videoCard}>
-                  <Link to={`/post/${el.id}`}>
-                    <h2 className={styles.title}>{el.title}</h2>
-                    <div className={styles.contentWrap}>
-                      <p className={styles.content}>{el.content}</p>
-                      <div className={styles.imgWrap}>
-                        {el.mediaFilePath.includes(".mp4") ? 
-                        <video controls src={el.mediaFilePath}></video> :
-                        <img src={el.mediaFilePath} alt="" />}
-                      </div>
-                    </div>
-                  </Link>
-                  <div className={styles.tagsWrap}>
-                    <div className={styles.tag}>tag1</div>
-                    <div className={styles.tag}>tag2</div>
-                  </div>
-                </div>
-            ) : (
-              <div className={styles.card}>
-                <Link to={`/post/${el.id}`}>
-                  <h2 className={styles.title}>{el.title}</h2>
-                  <p className={styles.content}>{el.content}</p>
-                </Link> 
-                <div className={styles.tagsWrap}>
-                  <div className={styles.tag}>tag1</div>
-                  <div className={styles.tag}>tag2</div>
-                </div>
-              </div>
-            ))}
+      <Link to={`/post/${value.id}`}>
+        <div className={styles.cardText}>
+          <p className={styles.title}>{value.title}</p>
+          <p className={styles.content}>{value.content}</p>
         </div>
+        
+        <div className={styles.media}>
+          <video id={"player" + value.id}></video>
+        </div>
+        <p>{value.createdAt.split('T')[0]}</p>
+      </Link>
+      <div className={styles.tags}>
+        {tags && (tags.map(el => (
+          <p className={styles.tag} key={el}>#{el}</p>
+        )))}
+      </div>
     </div>
   )
 }
