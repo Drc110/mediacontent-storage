@@ -1,7 +1,6 @@
 import styles from "./AdminPage.module.scss"
 import { useMyData } from '../servises/context'
 import { Link } from "react-router-dom"
-import axios from "axios"
 
 function AdminPage() {
     const { items, showPopUp, itemsActions } = useMyData()

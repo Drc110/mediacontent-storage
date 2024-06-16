@@ -1,6 +1,6 @@
 import styles from './cardItem.module.scss'
 import { useState, useEffect } from 'react'
-import { Route, Routes, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Plyr from "plyr"
 import Hls from "hls.js"
 
